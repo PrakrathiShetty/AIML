@@ -63,7 +63,7 @@ def binary_search(list1, n):  <br>
          for get integer result   <br>
         mid = (high + low) // 2  <br>
   
-        #Check if n is present at mid   <br>
+        Check if n is present at mid   <br>
         if list1[mid] < n:  <br>
             low = mid + 1  <br>
   
