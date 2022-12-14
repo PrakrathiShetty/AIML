@@ -1,5 +1,5 @@
 # AIML<br><br>
-<b>BREADTH FIRST SEARCH</b><br>
+<b>1.BREADTH FIRST SEARCH</b><br>
 graph={<br>
     '1':['2','10'],<br>
     '2':['3','8'],<br>
@@ -27,7 +27,7 @@ def bfs(visited,graph,node):<br>
 print("Following the BFS")<br>
 bfs(visited,graph,'1')<br>
 
-<b>DEPTH FIRST SEARCH</b><br> Using a Python dictionary to act as an adjacency list<br>
+<b>2.DEPTH FIRST SEARCH</b><br> Using a Python dictionary to act as an adjacency list<br>
 graph = {<br>
     '5' : ['3','7'],<br>
     '3' : ['2', '4'],<br>
@@ -50,7 +50,7 @@ Driver Code<br>
 print("Following is the Depth-First Search")<br>
 dfs(visited, graph, '5')<br>
 
-
+<b>3.BINARY SEARCH</b><br>
 Iterative Binary Search Function method Python Implementation <br>
 It returns index of n in given list1 if present, <br>  
 else returns -1   <br>
@@ -92,7 +92,7 @@ else:  <br>
     print("Element is not present in list1") <br> 
 
 
-<b>BEST FIRST SEARCH</b><br> 
+<b>4.BEST FIRST SEARCH</b><br> 
 from queue import PriorityQueue<br> 
 import matplotlib.pyplot as plt<br> 
 import networkx as nx<br> 
@@ -128,7 +128,7 @@ print("\nPath:",end="")<br>
 best_first_search(source,target,v)<br> 
 
 
-<b>WATERJUG PROBLEM</b><br> 
+<b>5.WATERJUG PROBLEM</b><br> 
 from collections import defaultdict<br> 
 jug1,jug2,aim=4,3,2<br> 
 visited=defaultdict(lambda:False)<br> 
@@ -152,7 +152,7 @@ def waterJugSolver(amt1,amt2):<br>
 print("steps:")<br> 
 waterJugSolver(0,0)<br> 
 
-<b>TOWEROGHANOI</b><br> 
+<b>6.TOWEROGHANOI</b><br> 
 def TowerOfHanoi(n,source,destination,auxiliary):<br> 
     if n==1:<br> 
         print("Move desk 1 from source",source,"to destination",destination)<br> 
