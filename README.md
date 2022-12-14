@@ -90,3 +90,39 @@ if result != -1: <br>
     print("Element is present at index", str(result))  <br>
 else:  <br>
     print("Element is not present in list1") <br> 
+
+
+#BEST FIRST SEARCH<br> 
+from queue import PriorityQueue<br> 
+import matplotlib.pyplot as plt<br> 
+import networkx as nx<br> 
+def best_first_search(source,target,n):<br> 
+    visited=[0]*n<br> 
+    visited[source]=True<br> 
+    pq=PriorityQueue()<br> 
+    pq.put((0,source))<br> 
+    while pq.empty()==False:<br> 
+        u=pq.get()[1]<br> 
+        print(u,end="")<br> 
+        if u==target:<br> 
+            break<br> 
+        for v,c in graph[u]:<br> 
+            if visited[v]==False:<br> 
+                visited[v]=True<br> 
+                pq.put((c,v))<br> 
+    print()<br> 
+def addedge(x,y,cost):<br> 
+    graph[x].append((y,cost))<br> 
+    graph[y].append((x,cost))<br> 
+    
+v=int(input("enter the number of nodes:"))<br> 
+graph=[[] for i in range(v)]<br> 
+e=int(input("Enter the number of edges:"))<br> 
+print("Enter the edges along with their weights")<br> 
+for i in range(e):<br> 
+    x,y,z=list(map(int,input().split()))<br> 
+    addedge(x,y,z)<br> 
+source=int(input("Enter the source node:"))<br> 
+target=int(input("enter the target/destination node:"))<br> 
+print("\nPath:",end="")<br> 
+best_first_search(source,target,v)<br> 
