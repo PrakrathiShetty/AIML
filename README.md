@@ -92,7 +92,7 @@ else:  <br>
     print("Element is not present in list1") <br> 
 
 
-#BEST FIRST SEARCH<br> 
+<b>BEST FIRST SEARCH</b><br> 
 from queue import PriorityQueue<br> 
 import matplotlib.pyplot as plt<br> 
 import networkx as nx<br> 
@@ -126,3 +126,39 @@ source=int(input("Enter the source node:"))<br>
 target=int(input("enter the target/destination node:"))<br> 
 print("\nPath:",end="")<br> 
 best_first_search(source,target,v)<br> 
+
+
+<b>WATERJUG PROBLEM</b><br> 
+from collections import defaultdict<br> 
+jug1,jug2,aim=4,3,2<br> 
+visited=defaultdict(lambda:False)<br> 
+def waterJugSolver(amt1,amt2):<br> 
+    if(amt1==aim and amt2==0)or(amt2==aim and amt1==0):<br> 
+        print(amt1,amt2)<br> 
+        return True<br> 
+    if visited[(amt1,amt2)]==False:<br> 
+        print(amt1,amt2)<br> 
+        visited[(amt1,amt2)]=True<br> 
+        return(waterJugSolver(0,amt2)or<br> 
+            waterJugSolver(amt1,0)or<br> 
+            waterJugSolver(jug1,amt2)or<br> 
+            waterJugSolver(amt1,jug2)or<br> 
+            waterJugSolver(amt1+min(amt2,(jug1-amt1)),<br> 
+            amt2-min(amt2,(jug1-amt1))) or<br> 
+            waterJugSolver(amt1-min(amt1,(jug2-amt2)),<br> 
+            amt2+min(amt1,(jug2-amt2))))<br> 
+    else:<br> 
+        return False<br> 
+print("steps:")<br> 
+waterJugSolver(0,0)<br> 
+
+<b>TOWEROGHANOI</b><br> 
+def TowerOfHanoi(n,source,destination,auxiliary):<br> 
+    if n==1:<br> 
+        print("Move desk 1 from source",source,"to destination",destination)<br> 
+        return<br> 
+    TowerOfHanoi(n-1,source,auxiliary,destination)<br> 
+    print("Move disk",n,"form source",source,"to destination",destination)<br> 
+    TowerOfHanoi(n-1,auxiliary,destination,source)<br> 
+n=3<br> 
+TowerOfHanoi(n,'A','B','C')<br> 
