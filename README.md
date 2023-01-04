@@ -162,3 +162,7 @@ def TowerOfHanoi(n,source,destination,auxiliary):<br>
     TowerOfHanoi(n-1,auxiliary,destination,source)<br> 
 n=3<br> 
 TowerOfHanoi(n,'A','B','C')<br> 
+
+
+#AO* algorithem
+
